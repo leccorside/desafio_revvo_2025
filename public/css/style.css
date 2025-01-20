@@ -1,0 +1,157 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+}
+
+header .logo h1 {
+    font-size: 24px;
+    color: #fff;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+header nav input {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+header nav .user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header nav .user-info img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+/* Slideshow */
+.slideshow {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    height: 500px;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 35%;
+    left: 5%;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.overlay h3{
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.overlay p{
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 25px;
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+.courses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.course-card {
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.course-card img {
+    width: 100%;
+}
+
+.course-card button {
+    background: green;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.add-course {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    border: 1px dashed #ccc;
+    color: gray;
+    text-align: center;
+}
