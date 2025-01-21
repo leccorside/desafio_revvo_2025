@@ -12,50 +12,40 @@
                 </div>
             </div>
         <?php endforeach; ?>
-<<<<<<< HEAD
-=======
-
-<div class="slideshow">
-    <div class="slides">
-        <div class="slide active">
-            <img src="public/images/slide1.jpg" alt="Slide 1">
-            <div class="overlay">Lorem ipsum dolor sit amet.</div>
-        </div>
-        <div class="slide">
-            <img src="public/images/slide2.jpg" alt="Slide 2">
-            <div class="overlay">Pellentesque malesuada nunc.</div>
-        </div>
-
->>>>>>> a08c1e735820966ac71e2c4ea893754a2d0edfde
     </div>
-    <button class="prev">&lt;</button>
-    <button class="next">&gt;</button>
+    <button class="prev"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="next"><i class="fa-solid fa-chevron-right"></i></button>
 </div>
 
-<<<<<<< HEAD
-=======
+<div class="conteudo">
+    <!-- Lista de Cursos -->
+    <h2 class="titulo-cursos">Meus Cursos</h2>
 
->>>>>>> a08c1e735820966ac71e2c4ea893754a2d0edfde
-<!-- Lista de Cursos -->
-<h2>Meus Cursos</h2>
-<div class="courses">
-    <?php foreach ($courses as $course): ?>
-        <div class="course-card">
-            <img src="<?= $course['image'] ?>" alt="<?= $course['title'] ?>">
-            <h3><?= $course['title'] ?></h3>
-            <p>
-                <?= implode(' ', array_slice(explode(' ', $course['description']), 0, 10)) . (str_word_count($course['description']) > 10 ? '...' : '') ?>
-            </p>
+    <div class="courses">
+        <?php foreach ($courses as $course): ?>
+            <div class="course-card">
+                <img src="<?= $course['image'] ?>" alt="<?= $course['title'] ?>">
+                <div class="text-curso">  
+                    <h3><?= $course['title'] ?></h3>
 
-<<<<<<< HEAD
-=======
-            <p><?= $course['description'] ?></p>
->>>>>>> a08c1e735820966ac71e2c4ea893754a2d0edfde
-            <button>Ver Curso</button>
+                    <p>
+                        <?= implode(' ', array_slice(explode(' ', $course['description']), 0, 10)) . (str_word_count($course['description']) > 10 ? '...' : '') ?>
+                    </p>
+
+                    <button class="btn" onclick="window.location.href='/projetos/desafio_revvo2/curso/<?= $course['id'] ?>'">Ver Curso</button>
+
+                </div>
+            </div>
+        <?php endforeach; ?>
+        <div class="add-course">
+            <a href="">
+                <p><img src="public/images/folder.webp" alt="ADICIONAR CURSO"></p>
+                <p>
+                <span>ADICIONAR</span><br>
+                <span>CURSO</span>
+                </p>
+            </a>
         </div>
-    <?php endforeach; ?>
-    <div class="add-course">
-        <span>Adicionar Curso</span>
     </div>
 </div>
 <?php $content = ob_get_clean(); ?>

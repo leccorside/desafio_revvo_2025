@@ -1,9 +1,14 @@
 <?php
 
+namespace Models;
+
 class Course {
     public static function getAllCourses() {
-        $data = file_get_contents('data/courses.json');
-        $courses = json_decode($data, true);
-        return is_array($courses) ? $courses : [];
+        $filePath = __DIR__ . '/../data/courses.json';
+        if (file_exists($filePath)) {
+            $data = file_get_contents($filePath);
+            return json_decode($data, true);
+        }
+        return [];
     }
 }

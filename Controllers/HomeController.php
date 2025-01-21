@@ -1,10 +1,12 @@
 <?php
 
-require_once 'Models/Course.php';
+namespace Controllers;
+
+use Models\Course; // Importa o modelo Course
 
 class HomeController {
     public function index() {
-        // Obter todos os cursos
+        // Obter todos os cursos do modelo
         $allCourses = Course::getAllCourses();
 
         // Obter os 3 últimos cursos cadastrados
@@ -12,6 +14,8 @@ class HomeController {
 
         // Passar as variáveis necessárias para a view
         $courses = $allCourses; // Todos os cursos
-        require 'Views/home.php';
+
+        // Incluir a view
+        require __DIR__ . '/../Views/home.php';
     }
 }
