@@ -72,5 +72,21 @@
 </div>
 
 
+<!-- Modal -->
+<div id="welcomeModal" class="modal">
+    
+    <div class="modal-content2">
+        <i class="fa-solid fa-xmark close2" id="closeModal"></i>
+        <img src="public/images/bg-modal.webp">
+        <div class="content-modal-well">
+            <h2>EGESTAS TORTOR VULPUTATE</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
+            <button>INSCREVER-SE</button>
+        </div>
+    </div>
+</div>
+
+
+
 <?php $content = ob_get_clean(); ?>
 <?php include 'layout.php'; ?>

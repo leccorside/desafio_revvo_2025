@@ -223,3 +223,58 @@ $(document).ready(function() {
         }
     });
 });
+
+
+
+//MODAL WELLCOME
+$(document).ready(function() {
+    var modal = document.getElementById("welcomeModal");
+    var closeModal = document.getElementById("closeModal");
+    var closeButton = document.getElementsByClassName("close")[0];
+
+    // Função para exibir o modal
+    function showModal() {
+        modal.style.display = "block";
+    }
+
+    // Função para fechar o modal
+    function closeModalFunc() {
+        modal.style.display = "none";
+    }
+
+    // Verifica se o modal foi exibido nos últimos 10 dias
+    var lastShown = localStorage.getItem("modalLastShown");
+    var currentDate = new Date();
+
+    if (lastShown) {
+        var lastShownDate = new Date(lastShown);
+        var diffDays = (currentDate - lastShownDate) / (1000 * 3600 * 24); // Diferença em dias
+
+        if (diffDays >= 10) {
+            // Se passaram 10 dias, mostrar o modal
+            showModal();
+        }
+    } else {
+        // Se for a primeira vez, mostrar o modal
+        showModal();
+    }
+
+    // Ao fechar o modal, salva a data da última exibição
+    closeModal.addEventListener("click", function() {
+        localStorage.setItem("modalLastShown", currentDate.toISOString());
+        closeModalFunc();
+    });
+
+    closeButton.onclick = function() {
+        localStorage.setItem("modalLastShown", currentDate.toISOString());
+        closeModalFunc();
+    }
+
+    // Fechar o modal ao clicar fora da área do conteúdo
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            localStorage.setItem("modalLastShown", currentDate.toISOString());
+            closeModalFunc();
+        }
+    }
+});

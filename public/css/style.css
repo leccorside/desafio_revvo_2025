@@ -135,6 +135,21 @@
         margin-right: 8px !important;
         font-size: 18px !important;
     }
+
+    .content-modal-well {
+        padding: 20px !important;
+    }
+
+    .modal-content2 {
+        background-color: #fefefe;
+        margin: 50% auto !important;
+    }
+
+    .close2 {
+        font-size: 20px !important;
+        right: -13px !important;
+        padding: 7px 10px !important;
+    }
 }
 
 /* Reset básico */
@@ -567,11 +582,68 @@ p.foo-coont3 {
     max-width: 600px;
 }
 
+.modal-content2 {
+    background-color: #fefefe;
+    margin: 15% auto;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 800px;
+    position: relative;
+}
+
+.modal-content2 img{
+    width: 100%;
+}
+
+.content-modal-well {
+    padding: 50px;
+    text-align: center;
+    width: 100%;
+}
+
+.content-modal-well h2{
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.content-modal-well p{
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.content-modal-well button{
+    background: #1da2da;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    max-width: 250px;
+    margin-top: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 800;
+}
+
+.close2{
+    color: #ff9176;
+    font-size: 30px;
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background: #fff;
+    border-radius: 50%;
+    padding: 7px 11px;
+    cursor: pointer;
+}
+
 .close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .close:hover,
