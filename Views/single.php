@@ -33,7 +33,7 @@
             <textarea id="description" name="description"><?= $course['description'] ?></textarea><br><br>
 
             <label for="image">Imagem:</label><br>
-            <img src="../<?= $course['image'] ?>" alt="<?= $course['title'] ?>"><br>
+            <img src="../<?= $course['image'] ?>" id="imgedit" alt="<?= $course['title'] ?>"><br>
             <input type="file" id="image" name="image" value="<?= $course['image'] ?>"><br><br>
 
             <button type="submit">Salvar</button>

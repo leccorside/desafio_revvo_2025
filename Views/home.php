@@ -38,7 +38,7 @@
             </div>
         <?php endforeach; ?>
         <div class="add-course">
-            <a href="">
+            <a href="#" id="addCourseBtn">
                 <p><img src="public/images/folder.webp" alt="ADICIONAR CURSO"></p>
                 <p>
                 <span>ADICIONAR</span><br>
@@ -48,5 +48,29 @@
         </div>
     </div>
 </div>
+
+<div id="addCourseModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Adicionar Novo Curso</h2>
+        <form id="addCourseForm" enctype="multipart/form-data">
+            <input type="hidden" id="id" name="id" value=""> <!-- ID será gerado no servidor -->
+
+            <label for="title">Título:</label><br>
+            <input type="text" id="title" name="title" class="inputmodal1" value="" required><br><br>
+
+            <label for="description">Descrição:</label><br>
+            <textarea id="description" name="description" required></textarea><br><br>
+
+            <label for="image">Imagem:</label><br>
+            <img id="previewImage" src="public/images/default.webp" alt="Pré-visualização"><br>
+            <input type="file" id="image" name="image" accept="image/*"><br><br>
+
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+</div>
+
+
 <?php $content = ob_get_clean(); ?>
 <?php include 'layout.php'; ?>
