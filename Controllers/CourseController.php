@@ -2,17 +2,29 @@
 
 namespace Controllers;
 
-use Models\CourseModel;
+use Models\Course;
 
 class CourseController {
     public function show($id) {
-        $model = new CourseModel();
-        $course = $model->getCourseById($id);
+        // Obter todos os cursos
+        $allCourses = Course::getAllCourses();
 
+        // Filtrar o curso pelo ID
+        $course = array_filter($allCourses, function ($c) use ($id) {
+            return $c['id'] == $id;
+        });
+
+        // Obter o primeiro curso encontrado
+        $course = reset($course);
+
+        // Verificar se o curso existe
         if (!$course) {
-            die("Curso não encontrado.");
+            http_response_code(404);
+            echo "Curso não encontrado!";
+            return;
         }
 
-        include 'Views/single.php';
+        // Renderizar a página de detalhes do curso
+        require __DIR__ . '/../Views/single.php';
     }
 }

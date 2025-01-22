@@ -1,21 +1,4 @@
 <?php ob_start(); ?>
-<!-- Slideshow -->
-<div class="slideshow">
-    <div class="slides">
-        <?php foreach ($latestCourses as $course): ?>
-            <div class="slide">
-                <img src="<?= $course['image'] ?>" alt="<?= $course['title'] ?>">
-                <div class="overlay">
-                    <h3><?= $course['title'] ?></h3>
-                    <p><?= $course['description'] ?></p>
-                    <button class="btn" onclick="window.location.href='/projetos/desafio_revvo2/curso/<?= $course['id'] ?>'">Ver Curso</button>
-                </div>
-            </div>
-        <?php endforeach; ?>
-    </div>
-    <button class="prev"><i class="fa-solid fa-chevron-left"></i></button>
-    <button class="next"><i class="fa-solid fa-chevron-right"></i></button>
-</div>
 
 <div class="conteudo">
     <!-- Lista de Cursos -->

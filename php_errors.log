@@ -1,0 +1,4 @@
+[22-Jan-2025 19:23:27 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function spl_autoload_register2() in E:\xampp\htdocs\projetos\desafio_revvo2\index.php:10
+Stack trace:
+#0 {main}
+  thrown in E:\xampp\htdocs\projetos\desafio_revvo2\index.php on line 10
