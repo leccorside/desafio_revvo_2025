@@ -168,3 +168,58 @@ $(document).ready(function () {
 });
 
 
+
+//BUSCAR CURSO
+$(document).ready(function() {
+    // Ao digitar no campo de pesquisa
+    $("#courseSearch").on("input", function() {
+        var searchTerm = $(this).val();
+
+        // Se o termo tiver pelo menos 3 caracteres
+        if (searchTerm.length >= 3) {
+            $.ajax({
+                url: '/projetos/desafio_revvo2/search_courses.php',
+                type: 'GET',
+                data: { q: searchTerm },
+                success: function(response) {
+                    // Limpa a lista de resultados
+                    $("#searchResults").empty();
+
+                    // Se houver resultados, exibe-os
+                    if (response.length > 0) {
+                        $.each(response, function(index, course) {
+                            // Criando o item de lista com o título clicável
+                            var listItem = $("<li>")
+                                .text(course.title)
+                                .on("click", function() {
+                                    // Redireciona para a página do curso
+                                    window.location.href = "/projetos/desafio_revvo2/curso/" + course.id;
+                                });
+
+                            // Adiciona o item à lista de resultados
+                            $("#searchResults").append(listItem);
+                        });
+
+                        // Exibe os resultados
+                        $("#searchResults").show();
+                    } else {
+                        $("#searchResults").hide(); // Se não houver resultados, esconde a lista
+                    }
+                },
+                error: function() {
+                    alert("Erro ao realizar a busca.");
+                }
+            });
+        } else {
+            // Esconde os resultados se o termo for menor que 3 caracteres
+            $("#searchResults").hide();
+        }
+    });
+
+    // Fecha a lista de resultados ao clicar fora
+    $(document).on("click", function(event) {
+        if (!$(event.target).closest("#searchResults, #courseSearch").length) {
+            $("#searchResults").hide();
+        }
+    });
+});

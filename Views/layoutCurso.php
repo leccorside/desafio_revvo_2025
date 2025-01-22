@@ -16,9 +16,12 @@
             <h2>LEO</h2>
         </div>
         <nav>
-            <div class="input-container">
-                <input type="text" placeholder="Pesquisar curso...">
-                <i class="fa-solid fa-magnifying-glass"></i>
+        <div class="campo-busca">
+                <div class="input-container">
+                    <input type="text" id="courseSearch" placeholder="Pesquisar curso...">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <ul id="searchResults" style="display:none;"></ul>
             </div>
 
             <div class="user-info">
